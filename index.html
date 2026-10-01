@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Escape</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="gameWrapper">
+
+        <canvas id="gameCanvas" width="1200" height="700"></canvas>
+
+        <div id="hud">
+            <div class="playerHud blue">
+                <strong>🔵 PLAYER 1</strong>
+                <span>❤️ <b id="hp1">3</b></span>
+                <span>⚡ <b id="energy1">0</b></span>
+            </div>
+
+            <div id="gameTitle">NEON ESCAPE</div>
+
+            <div class="playerHud red">
+                <strong>🔴 PLAYER 2</strong>
+                <span>❤️ <b id="hp2">3</b></span>
+                <span>⚡ <b id="energy2">0</b></span>
+            </div>
+        </div>
+
+        <div id="objective">
+            ATIVE OS 3 GERADORES E ESCAPE PELO PORTAL
+        </div>
+
+        <div id="controls">
+            <b>P1:</b> A/D mover · W pular · F ataque
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <b>P2:</b> ←/→ mover · ↑ pular · SHIFT ataque
+        </div>
+
+        <div id="startScreen" class="screen">
+            <div class="menu">
+                <div class="logo">⚡</div>
+                <h1>NEON ESCAPE</h1>
+
+                <p>
+                    A cidade foi tomada pelos drones.
+                    Trabalhe em equipe para ativar os
+                    geradores e escapar.
+                </p>
+
+                <div class="instructions">
+                    <div>🔵 P1 — A/D/W/F</div>
+                    <div>🔴 P2 — ←/↑/→/SHIFT</div>
+                </div>
+
+                <button id="startButton">
+                    INICIAR MISSÃO
+                </button>
+            </div>
+        </div>
+
+        <div id="winScreen" class="screen hidden">
+            <div class="menu">
+                <div class="logo">🏆</div>
+                <h1>MISSÃO CONCLUÍDA</h1>
+                <p>Os dois jogadores escaparam da cidade!</p>
+                <button onclick="location.reload()">
+                    JOGAR NOVAMENTE
+                </button>
+            </div>
+        </div>
+
+        <div id="loseScreen" class="screen hidden">
+            <div class="menu">
+                <div class="logo">💀</div>
+                <h1>MISSÃO FALHOU</h1>
+                <p>Os drones dominaram a cidade.</p>
+                <button onclick="location.reload()">
+                    TENTAR NOVAMENTE
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

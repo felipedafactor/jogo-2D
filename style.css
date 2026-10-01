@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at center,
+            #17264d,
+            #050714 75%
+        );
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow: hidden;
+}
+
+#gameWrapper {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+canvas {
+    width: min(1200px, 100vw);
+    height: min(700px, 100vh);
+
+    border: 3px solid #263b73;
+
+    background: #090d20;
+
+    image-rendering: pixelated;
+
+    box-shadow:
+        0 0 20px #0066ff,
+        0 0 80px rgba(0, 132, 255, .2);
+}
+
+/* HUD */
+
+#hud {
+    position: absolute;
+
+    top: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(1140px, 94vw);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    pointer-events: none;
+}
+
+.playerHud {
+    padding: 10px 16px;
+
+    min-width: 210px;
+
+    display: flex;
+    gap: 14px;
+
+    color: white;
+
+    background:
+        rgba(5, 9, 25, .88);
+
+    border-radius: 8px;
+
+    border: 1px solid #263c71;
+
+    font-size: 13px;
+}
+
+.playerHud.blue {
+    border-left: 5px solid #00aaff;
+}
+
+.playerHud.red {
+    border-left: 5px solid #ff315d;
+}
+
+#gameTitle {
+    color: #ffffff;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    font-size: 18px;
+
+    text-shadow:
+        0 0 10px #00eaff,
+        0 0 25px #0077ff;
+}
+
+/* Objetivo */
+
+#objective {
+    position: absolute;
+
+    top: 75px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 8px 18px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0, 0, 0, .65);
+
+    color: #8cecff;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    pointer-events: none;
+}
+
+/* Controles */
+
+#controls {
+    position: absolute;
+
+    bottom: 12px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 9px 18px;
+
+    color: #a9bce8;
+
+    background:
+        rgba(0, 0, 0, .75);
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    pointer-events: none;
+}
+
+/* Telas */
+
+.screen {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        rgba(2, 5, 17, .78);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.menu {
+    width: min(500px, 90vw);
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111c3d,
+            #070b1d
+        );
+
+    border: 1px solid #2f5dbb;
+
+    box-shadow:
+        0 0 50px rgba(0, 153, 255, .25);
+}
+
+.logo {
+    font-size: 60px;
+
+    margin-bottom: 10px;
+
+    filter:
+        drop-shadow(
+            0 0 15px #00d9ff
+        );
+}
+
+.menu h1 {
+    color: white;
+
+    font-size: 34px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 12px #00cfff;
+}
+
+.menu p {
+    color: #aebee2;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+.instructions {
+    color: #78eaff;
+
+    line-height: 2;
+
+    margin-bottom: 20px;
+}
+
+.menu button {
+    border: none;
+
+    padding: 14px 30px;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #007bff,
+            #00d9ff
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(0, 200, 255, .4);
+
+    transition: .2s;
+}
+
+.menu button:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 35px rgba(0, 220, 255, .7);
+}
+
+@media(max-width: 700px) {
+
+    .playerHud {
+        min-width: 130px;
+        font-size: 9px;
+        gap: 5px;
+    }
+
+    #gameTitle {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    #controls {
+        font-size: 8px;
+    }
+
+    #objective {
+        font-size: 8px;
+    }
+
+}
